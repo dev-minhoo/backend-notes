@@ -8,6 +8,6 @@
 | 01 | 비동기 메시징과 메시지 큐 | 메시지는 두 번 올 수 있다 (at-least-once) | 멱등성 |
 | 02 | 백엔드 시스템 전체 구조 | 서버가 늘면 같은 작업이 두 번 돈다 | 락 |
 | 03 | Redis 분산락과 멱등성 | 락은 TTL 때문에 보장이 아니다 | 멱등성 + DB 제약이 최종 방어 |
-| 04 | Redis 멱등성 구현과 3중 방어 (작성 중) | | |
+| 04 | Redis 멱등성 구현과 3중 방어 | 동시 50요청 → 1건 | 3중 방어의 증명 |
 
 구현은 [payment-settlement-core](https://github.com/dev-minhoo/payment-settlement-core)에 있습니다.
