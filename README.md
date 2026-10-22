@@ -9,5 +9,6 @@
 | 02 | 백엔드 시스템 전체 구조 | 서버가 늘면 같은 작업이 두 번 돈다 | 락 |
 | 03 | Redis 분산락과 멱등성 | 락은 TTL 때문에 보장이 아니다 | 멱등성 + DB 제약이 최종 방어 |
 | 04 | Redis 멱등성 구현과 3중 방어 | 동시 50요청 → 1건 | 3중 방어의 증명 |
+| 05 | 잔액 동시 차감 | 읽고-덮어쓰면 출금 100건 중 90건이 사라진다 | 조건부 UPDATE · 비관적 락 (낙관적 락은 9배 시도) |
 
 구현은 [payment-settlement-core](https://github.com/dev-minhoo/payment-settlement-core)에 있습니다.
